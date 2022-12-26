@@ -33,15 +33,14 @@ const load = key => {
 const storageData = load('feedback-form-state');
 
 if (storageData) {
-     email.value = storageData.email;
+  email.value = storageData.email;
   message.value = storageData.message;
-  
+
   if (!storageData.email) {
     email.value = '';
   } else if (!storageData.message) {
     message.value = '';
-  } 
-
+  }
 }
 
 feedbackFormEl.addEventListener('input', throttle(handleInputForm, 500));
