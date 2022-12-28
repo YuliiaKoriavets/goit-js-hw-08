@@ -12,9 +12,12 @@ onrefreshPage()
 
 function onrefreshPage() {
   const storageData = JSON.parse(localStorage.getItem('feedback-form-state'));
-  formData = storageData
-  email.value = storageData.email || "";
-  message.value = storageData.message || "";
+  
+  email.value = storageData?.email || "";
+  message.value = storageData?.message || "";
+  if (storageData) {
+    formData = storageData
+  }
 }
 
 function handleInputForm ( event) {
